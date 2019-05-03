@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+User.create()
+
+
 Compliment.create(content:"You’re strong, you’re a Kelly Clarkson song, you got this.")
 Compliment.create(content:"Yas queen!")
 Compliment.create(content:"Can you handle the CON-FI-DONCE?")
