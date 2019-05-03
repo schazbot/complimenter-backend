@@ -7,7 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create()
+User.create(username: "Charly")
+
+Image.create(url: 'http://www.luthervillage.org/assets/general/happy(2).jpg', user_id: 1)
 
 
 Compliment.create(content:"You’re strong, you’re a Kelly Clarkson song, you got this.")
@@ -29,3 +31,5 @@ Compliment.create(content:"You're living your truth and it’s cute!")
 Compliment.create(content:"Yes Balance! Yes Symmetry!")
 Compliment.create(content:"Live your best life, Henny!")
 
+
+ImageCompliment.create(image_id: 1, compliment_id: 1)

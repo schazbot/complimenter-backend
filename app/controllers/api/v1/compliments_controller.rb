@@ -1,4 +1,4 @@
-class Api::V1::ComplimentController < ApplicationController
+class Api::V1::ComplimentsController < ApplicationController
 
     def index
         compliment = Compliment.all.sample.content
