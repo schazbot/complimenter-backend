@@ -35,8 +35,6 @@ ActiveRecord::Schema.define(version: 2019_05_03_094241) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.bigint "image_compliment_id"
-    t.index ["image_compliment_id"], name: "index_images_on_image_compliment_id"
     t.index ["user_id"], name: "index_images_on_user_id"
   end
 
@@ -48,6 +46,5 @@ ActiveRecord::Schema.define(version: 2019_05_03_094241) do
 
   add_foreign_key "image_compliments", "compliments"
   add_foreign_key "image_compliments", "images"
-  add_foreign_key "images", "image_compliments"
   add_foreign_key "images", "users"
 end
