@@ -1,4 +1,5 @@
 class Api::V1::ComplimentsController < ApplicationController
+
     require 'rest-client'
     require 'base64'
 
@@ -19,14 +20,17 @@ class Api::V1::ComplimentsController < ApplicationController
         render json: response
     end
     
+
     def index
         compliment = Compliment.all.sample.content
         render json: {content: compliment}
     end
 
+
     def colour
 
     end
+
 
 
 end
