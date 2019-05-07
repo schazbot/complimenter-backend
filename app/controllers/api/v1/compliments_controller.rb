@@ -4,5 +4,4 @@ class Api::V1::ComplimentsController < ApplicationController
         compliment = Compliment.all.sample.content
         render json: {content: compliment}
     end
-  
 end
