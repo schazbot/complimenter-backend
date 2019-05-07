@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       resources :images, only: [:index, :create]
       resources :image_compliments, only: [:index]
       resources :compliments, only: [:index, :show]
+
+      get '/compliments/colour', to: 'compliments#get_colour_tags'     
     end 
   end
 end
