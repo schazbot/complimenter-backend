@@ -16,7 +16,7 @@ class Api::V1::ComplimentsController < ApplicationController
         response = RestClient.get "https://api.imagga.com/v2/colors?image_url=#{image_url}", { :Authorization => auth }
         puts response  
 
-        render json: response.result.colors
+        render json: response
     end
     
     def index
