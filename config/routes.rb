@@ -7,9 +7,10 @@ Rails.application.routes.draw do
       resources :users, only: [:index]
       resources :images, only: [:index, :create, :destroy]
       resources :image_compliments, only: [:index, :destroy]
-      resources :compliments, only: [:index, :show, :create]
+      resources :compliments, only: [:index, :create]
 
-      get '/compliments/colour', to: 'compliments#get_colour_tags'     
+      get '/compliments/colour', to: 'compliments#get_colour_tags'
+      get '/compliments/tags', to: 'compliments#get_tags'     
     end 
   end
 end

@@ -28,12 +28,24 @@ class Api::V1::ComplimentsController < ApplicationController
         
     end
     
-    def index
+    def get_tags 
+            image_url = Image.last.url 
+            api_key = 'acc_f7ac00d8914bd48'
+            api_secret = 'ce55cab59cfdf033b6be316addaf89c9'
+            
+            auth = 'Basic ' + Base64.strict_encode64( "#{api_key}:#{api_secret}" ).chomp
+            response = RestClient.get "https://api.imagga.com/v2/tags?image_url=#{image_url}", { :Authorization => auth }
+            tag_results = JSON.parse(response.body)
+            tag_results_first_hit =tag_results["result"]["tags"][0]["tag"]["en"]
+    
+            compliment = Compliment.all.sample
+            compliment_content = compliment.content
+            
+            newImgComp = ImageCompliment.create(image_id: Image.last.id, compliment_id: compliment.id, colour: "You're serving #{tag_results_first_hit}, Henny!")
+    
+            render json: {tag:"You're serving #{tag_results_first_hit}, Henny!"}
     end
 
-    def colour
-
-    end
 
 
 end
