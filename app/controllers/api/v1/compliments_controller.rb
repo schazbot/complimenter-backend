@@ -21,12 +21,10 @@ class Api::V1::ComplimentsController < ApplicationController
 
 
         # create the image_compliment with parsed and the 2 id's
-        ImageCompliment.create(image_id: Image.last.id, compliment_id: compliment.id, colour: "#{feature_colour} looks so great on you!")
+        newImgComp = ImageCompliment.create(image_id: Image.last.id, compliment_id: compliment.id, colour: "#{feature_colour.capitalize} looks so great on you!")
 
-        render json: {
-            colour: "#{feature_colour} looks so great on you!",
-            content: compliment_content 
-       }
+        render json: newImgComp
+       
         
     end
     
