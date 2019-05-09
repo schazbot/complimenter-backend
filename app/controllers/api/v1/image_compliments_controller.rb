@@ -1,5 +1,6 @@
 class Api::V1::ImageComplimentsController < ApplicationController
 
+
     def index
         image_compliments = ImageCompliment.all
         render json: image_compliments
@@ -9,6 +10,7 @@ class Api::V1::ImageComplimentsController < ApplicationController
         image_comp = ImageCompliment.find(params[:id])
         image_comp.destroy
     end
+
 
 
 

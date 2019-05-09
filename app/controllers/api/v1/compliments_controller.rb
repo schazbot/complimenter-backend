@@ -1,4 +1,5 @@
 class Api::V1::ComplimentsController < ApplicationController
+
     require 'rest-client'
     require 'base64'
 
@@ -28,12 +29,15 @@ class Api::V1::ComplimentsController < ApplicationController
         
     end
     
+
     def index
     end
+
 
     def colour
 
     end
+
 
 
 end
