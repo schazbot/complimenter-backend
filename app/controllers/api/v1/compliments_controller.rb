@@ -1,4 +1,5 @@
 class Api::V1::ComplimentsController < ApplicationController
+
     require 'rest-client'
     require 'base64'
 
@@ -30,12 +31,15 @@ ImageCompliment.create(image_id: Image.last.id, compliment_id: compliment.id, co
         
     end
     
+
     def index
     end
+
 
     def colour
 
     end
+
 
 
 end

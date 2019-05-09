@@ -1,6 +1,5 @@
 class Api::V1::ImagesController < ApplicationController
 
-
     def index
         images = Image.all 
         render json: images
@@ -10,6 +9,9 @@ class Api::V1::ImagesController < ApplicationController
         image = Image.create(url:params[:url], user_id:params[:user_id])
         render json: image
     end
+  
 end
+
+
 
 
