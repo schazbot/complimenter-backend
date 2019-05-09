@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: [:index]
-      resources :images, only: [:index, :create]
-      resources :image_compliments, only: [:index]
-      resources :compliments, only: [:index, :show]
+      resources :images, only: [:index, :create, :destroy]
+      resources :image_compliments, only: [:index, :destroy]
+      resources :compliments, only: [:index, :show, :create]
 
       get '/compliments/colour', to: 'compliments#get_colour_tags'     
     end 
