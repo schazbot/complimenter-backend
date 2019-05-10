@@ -6,6 +6,7 @@ class Api::V1::ImagesController < ApplicationController
     end
 
     def create
+        # byebug
         image = Image.create(url:params[:url], user_id:params[:user_id])
         render json: image
     end
